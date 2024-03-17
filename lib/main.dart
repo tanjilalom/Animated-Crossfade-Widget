@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -30,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool _first = true;
+  bool _bool = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Image.network(
                       "https://plus.unsplash.com/premium_photo-1676637000058-96549206fe71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")),
               crossFadeState:
-                  _first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+                  _bool ? CrossFadeState.showFirst : CrossFadeState.showSecond,
             ),
             SizedBox(
               height: 50,
@@ -58,11 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    _first = !_first;
+                    _bool = !_bool;
                   });
                 },
                 child: Text(
-                  "Press",
+                  "Change Picture",
                   style: TextStyle(fontSize: 20),
                 )),
           ],
