@@ -52,7 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
               crossFadeState:
                   _first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
             ),
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             ElevatedButton(
                 onPressed: () {
                   setState(() {
